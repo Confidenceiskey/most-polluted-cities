@@ -4,6 +4,9 @@ import { createGlobalStyle } from 'styled-components';
 const MainStyle = createGlobalStyle`
   body {
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
     padding: 0;
     width: 100vw;
     height: calc(100vh - 90px);

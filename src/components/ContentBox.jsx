@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from '../styles/Image';
 import MaskedMan from '../assets/masked-man.svg';
+import WrittenContentBox from './WrittenContentBox';
 
 const Box = styled.div`
   display: flex;
@@ -32,6 +33,10 @@ const Box = styled.div`
     width: 95vw;
     height: 180px;
   }
+
+  @media screen and (max-height: 650px) and (orientation: portrait) {
+    height: 160px;
+  }
 `;
 
 const ImgContent = styled.div`
@@ -57,17 +62,10 @@ const ImgContent = styled.div`
   }
 
   @media (max-width: 567px) {
-    margin-left: 18px;
+    margin-left: 25px;
     width: 100px;
     height: 130px;
   }
-`;
-
-const WrittenContent = styled.div`
-  flex-grow: 1;
-  margin-left: 15px;
-  background: #e6e6e6;
-  border-radius: 0 30px 30px 0;
 `;
 
 const ContentBox = () => {
@@ -76,7 +74,7 @@ const ContentBox = () => {
       <ImgContent>
         <Image src={MaskedMan} width='100%' height='auto' />
       </ImgContent>
-      <WrittenContent />
+      <WrittenContentBox />
     </Box>
   );
 }

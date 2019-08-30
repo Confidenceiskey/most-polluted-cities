@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import City from '../assets/city-pollution.svg';
 import Farming from '../assets/cow-pollution.svg';
@@ -12,23 +12,65 @@ const PollutionContainer = styled.div`
   margin: 0 auto -12px;
 `;
 
-const PollutionSources = () => {
-  return (
-    <PollutionContainer>
-      {window.innerWidth > 467 ?
+class PollutionSources extends Component {
+  constructor() {
+    super();
+    this.state = {
+      multiplier: 1
+    }
+  }
+
+  checkScreenSize = () => {
+    if (window.innerWidth > 467) {
+      this.setState({
+        multiplier: 1
+      })
+    } else {
+      this.setState({
+        multiplier: 0.65
+      })
+    }
+  }
+
+  calcImgSize = (dimension, multiplier) => {
+    return `${(dimension * multiplier)}px`;
+  }
+
+  componentDidMount = () => {
+    this.checkScreenSize();
+    window.addEventListener("resize", this.checkScreenSize);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.checkScreenSize);
+  }
+
+  render() {
+    const { multiplier } = this.state;
+    return (
+      <PollutionContainer>
         <React.Fragment>
-          <Image src={IndustrialImg} />
-          <Image src={City} flexGrow={2} width='175px' height='175px' />
-          <Image src={Farming} width='50px' height='50px' /> 
-        </React.Fragment> :
-        <React.Fragment>
-          <Image src={IndustrialImg} width='85px' height='85px' />
-          <Image src={City} flexGrow={2} width='110px' height='110px' />
-          <Image src={Farming} width='35px' height='35px' /> 
-        </React.Fragment>  
-      }
-    </PollutionContainer>
-  );
+          <Image 
+            src={IndustrialImg} 
+            height={this.calcImgSize(140, multiplier)} 
+            width={this.calcImgSize(140, multiplier)}
+          />
+          <Image 
+            src={City} 
+            flexGrow={2} 
+            height={this.calcImgSize(175, multiplier)} 
+            width={this.calcImgSize(175, multiplier)}
+          />
+          <Image 
+            src={Farming} 
+            height={this.calcImgSize(50, multiplier)}  
+            width={this.calcImgSize(50, multiplier)}
+          /> 
+        </React.Fragment> 
+      </PollutionContainer>
+    );
+  }
 }
 
 export default PollutionSources;
+
