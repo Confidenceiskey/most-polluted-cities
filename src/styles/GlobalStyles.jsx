@@ -12,6 +12,7 @@ const MainStyle = createGlobalStyle`
     height: calc(100vh - 90px);
     background: linear-gradient(to bottom, #454545 0vh, 
                 #696969 30vh, #2F80ED 60vh, #56CCF2 100vh);
+    background-attachment: fixed;
   }
 `;
 

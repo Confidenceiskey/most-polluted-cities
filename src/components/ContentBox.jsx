@@ -7,33 +7,23 @@ import WrittenContentBox from './WrittenContentBox';
 const Box = styled.div`
   display: flex;
   margin: 20px 0;
-  width: 60vw;
-  max-width: 800px;
-  min-width: 320px;
+  width: 100%;
   height: 250px;
   background: #fff;
   border-radius: 30px;
 
   @media (min-width: 1600px) {
-    max-width: 1200px;
     height: 320px;
   }
-
   @media (min-width: 769px) and (max-width: 991px) {
-    width: 80vw;
     height: 220px;
   }
-
   @media (min-width: 568px) and (max-width: 768px) {
-    width: 90vw;
     height: 180px;
   }
-
   @media  (max-width: 567px) {
-    width: 95vw;
     height: 180px;
   }
-
   @media screen and (max-height: 650px) and (orientation: portrait) {
     height: 160px;
   }
@@ -50,17 +40,14 @@ const ImgContent = styled.div`
     width: 280px;
     height: 320px;
   }
-
   @media (min-width: 769px) and (max-width: 991px) {
     width: 190px;
     height: 220px;
   }
-
   @media (min-width: 568px) and (max-width: 768px) {
     width: 150px;
     height: 180px;
   }
-
   @media (max-width: 567px) {
     margin-left: 25px;
     width: 100px;

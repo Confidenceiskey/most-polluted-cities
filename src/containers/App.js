@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GlobalStyle from '../styles/GlobalStyles';
 import EarthBackground from '../components/EarthBackground';
 import MainContent from '../components/MainContent';
+import ScrollWindow from '../styles/ScrollWindow';
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,9 @@ class App extends Component {
       <React.Fragment>
         <GlobalStyle />
         <EarthBackground />
-        <MainContent />
+        <ScrollWindow>
+          <MainContent />
+        </ScrollWindow>
       </React.Fragment>
     );
   }
