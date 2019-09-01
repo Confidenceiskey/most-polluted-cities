@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import TableElement from './TableElement';
-// import TableElementSpecial from './TableElementSpecial';
 
 const BodyRow = styled.div`
   display: flex;
@@ -12,7 +11,7 @@ const BodyRow = styled.div`
   border-radius: 12px;
 `;
 
-const TableRow = ({ textLeft, textCenter, textRightTop }) => {
+const TableRow = ({ textLeft, textCenter, textRight, rangeZone }) => {
   return (
     <BodyRow>
       <TableElement text={textLeft} />
@@ -22,7 +21,7 @@ const TableRow = ({ textLeft, textCenter, textRightTop }) => {
         align='left' 
         paddingL='30px' 
       />
-      <TableElement text={textRightTop} fontSm='16px' />
+      <TableElement text={textRight} rangeZone={rangeZone} />
     </BodyRow>
   );
 }

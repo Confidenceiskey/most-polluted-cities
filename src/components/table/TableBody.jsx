@@ -7,24 +7,32 @@ const StyledTableBody = styled.div`
   flex-direction: column;
 `;
 
-const TableBody = () => {
+const calcScaleRange = (PI) => {
+  if (PI <= 3) {
+    return '(low)'
+  } else if (PI <= 6) {
+    return '(mod)'
+  } else if (PI <= 10) {
+    return '(high)'
+  } else {
+    return '(very high)'
+  }
+}
+
+const TableBody = ({ ranking }) => {
   return (
     <StyledTableBody>
-      <TableRow 
-        textLeft='1' 
-        textCenter='Warsaw' 
-        textRightTop='6' 
-      />
-      <TableRow 
-        textLeft='2' 
-        textCenter='Katowice' 
-        textRightTop='6' 
-      />
-      <TableRow 
-        textLeft='3' 
-        textCenter='Warsaw' 
-        textRightTop='5' 
-      />
+      {ranking.map((city, i) => {
+        return (
+          <TableRow
+            key={city.city}
+            textLeft={i + 1}
+            textCenter={city.city}
+            textRight={city.pollutionIndex}
+            rangeZone= {calcScaleRange(city.pollutionIndex)}
+          />
+        );
+      })}
     </StyledTableBody>
   );
 }

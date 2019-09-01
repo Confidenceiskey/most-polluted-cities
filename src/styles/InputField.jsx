@@ -42,7 +42,7 @@ const Input = styled.input`
   }
 `;
 
-const InputField = ({ type, name, id, onChange, placeholder, list }) => {
+const InputField = ({ type, name, id, onChange, onClick, placeholder, list, value }) => {
   return (
     <Input
       placeholder={placeholder}
@@ -51,7 +51,9 @@ const InputField = ({ type, name, id, onChange, placeholder, list }) => {
       type={type} 
       name={name} 
       id={id} 
-      onChange={onChange} 
+      onChange={onChange}
+      onClick={onClick} 
+      value={value}
       required 
     />
   );

@@ -4,6 +4,7 @@ import TableHeaderElement from './TableHeaderElement';
 
 const HeadingRow = styled.div`
   display: flex;
+  width: calc(100% - 50px);
   align-items: center;
   background: #fff;
   margin: 10px 0;
@@ -11,19 +12,15 @@ const HeadingRow = styled.div`
   border-radius: 10px;
 `;
 
-const TableHeadingRow = () => {
+const ErrorHeader = ({ text }) => {
   return (
     <HeadingRow>
-      <TableHeaderElement text='Rank' />
       <TableHeaderElement 
-        text='City' 
-        flex={3} 
-        align='left' 
-        paddingL='30px' 
+        text={text} 
+        flex='auto' 
       />
-      <TableHeaderElement text='Pollution Index *' fontSm='16px' />
     </HeadingRow>
   );
 }
 
-export default TableHeadingRow;
+export default ErrorHeader;

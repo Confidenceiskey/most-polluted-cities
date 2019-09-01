@@ -15,21 +15,32 @@ const Element = styled.div`
   @media (max-width: 550px) {
     font-size: 17px;
   }
-
   @media (min-width: 1800px) {
     font-size: 26px;
     padding: 10px 0;
   }
 `;
 
-const TableElement = ({ text, flex, align, paddingL }) => {
+const CaptionText = styled.span`
+  font-size: 12px;
+
+  @media (max-width: 550px) {
+    font-size: 11px;
+  }
+  @media (min-width: 1800px) {
+    font-size: 17px;
+  }
+`;
+
+const TableElement = ({ text, flex, align, paddingL, rangeZone }) => {
   return (
     <Element 
       flex={flex} 
       align={align} 
       paddingL={paddingL}
     >
-      {text}
+      {text} 
+      <CaptionText>{` `}{rangeZone}</CaptionText>
     </Element>
   );
 }

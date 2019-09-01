@@ -55,13 +55,13 @@ const ImgContent = styled.div`
   }
 `;
 
-const ContentBox = () => {
+const ContentBox = (props) => {
   return (
     <Box>
       <ImgContent>
         <Image src={MaskedMan} width='100%' height='auto' />
       </ImgContent>
-      <WrittenContentBox />
+      <WrittenContentBox {...props} />
     </Box>
   );
 }

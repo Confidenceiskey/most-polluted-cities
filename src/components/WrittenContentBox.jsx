@@ -12,14 +12,14 @@ const WrittenContainer = styled.div`
   border-radius: 0 30px 30px 0;
 `;
 
-const WrittenContentBox = () => {
+const WrittenContentBox = (props) => {
   return (
     <WrittenContainer>
       <SubHeading 
         text='Select your country to see the 10 most currently polluted 
         cities' 
       />
-      <UserForm />
+      <UserForm {...props} />
     </WrittenContainer>
   );
 }
