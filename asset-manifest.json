@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/most-polluted-cities/static/js/main.6e2a92cc.chunk.js",
+    "main.js.map": "/most-polluted-cities/static/js/main.6e2a92cc.chunk.js.map",
+    "runtime~main.js": "/most-polluted-cities/static/js/runtime~main.f4845ab7.js",
+    "runtime~main.js.map": "/most-polluted-cities/static/js/runtime~main.f4845ab7.js.map",
+    "static/js/2.e1c794e6.chunk.js": "/most-polluted-cities/static/js/2.e1c794e6.chunk.js",
+    "static/js/2.e1c794e6.chunk.js.map": "/most-polluted-cities/static/js/2.e1c794e6.chunk.js.map",
+    "index.html": "/most-polluted-cities/index.html",
+    "precache-manifest.5b530775b999d2fc971fe7f4df472006.js": "/most-polluted-cities/precache-manifest.5b530775b999d2fc971fe7f4df472006.js",
+    "service-worker.js": "/most-polluted-cities/service-worker.js",
+    "static/media/city-pollution.svg": "/most-polluted-cities/static/media/city-pollution.24520a1b.svg",
+    "static/media/cow-pollution.svg": "/most-polluted-cities/static/media/cow-pollution.a4bf2695.svg",
+    "static/media/industrial-pollution.svg": "/most-polluted-cities/static/media/industrial-pollution.4a4259ab.svg",
+    "static/media/masked-man.svg": "/most-polluted-cities/static/media/masked-man.f015ba14.svg"
+  }
+}
