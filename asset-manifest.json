@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/most-polluted-cities/static/js/main.0697f8ec.chunk.js",
-    "main.js.map": "/most-polluted-cities/static/js/main.0697f8ec.chunk.js.map",
+    "main.js": "/most-polluted-cities/static/js/main.5eae3eaf.chunk.js",
+    "main.js.map": "/most-polluted-cities/static/js/main.5eae3eaf.chunk.js.map",
     "runtime~main.js": "/most-polluted-cities/static/js/runtime~main.f4845ab7.js",
     "runtime~main.js.map": "/most-polluted-cities/static/js/runtime~main.f4845ab7.js.map",
     "static/js/2.e1c794e6.chunk.js": "/most-polluted-cities/static/js/2.e1c794e6.chunk.js",
     "static/js/2.e1c794e6.chunk.js.map": "/most-polluted-cities/static/js/2.e1c794e6.chunk.js.map",
     "index.html": "/most-polluted-cities/index.html",
-    "precache-manifest.eb0c75d7fb7748846b3c257b3cc87458.js": "/most-polluted-cities/precache-manifest.eb0c75d7fb7748846b3c257b3cc87458.js",
+    "precache-manifest.11b244ea7bdf0893ae456aea12ac8fae.js": "/most-polluted-cities/precache-manifest.11b244ea7bdf0893ae456aea12ac8fae.js",
     "service-worker.js": "/most-polluted-cities/service-worker.js",
     "static/media/city-pollution.svg": "/most-polluted-cities/static/media/city-pollution.24520a1b.svg",
     "static/media/cow-pollution.svg": "/most-polluted-cities/static/media/cow-pollution.a4bf2695.svg",
