@@ -21,7 +21,7 @@ const StyledButton = styled.button`
     opacity: 0.7;
   }
 
-  @media (max-width: 667px) {
+  @media (max-width: 676px) {
     width: 100px;
     height: 32px;
     font-size: 16px;

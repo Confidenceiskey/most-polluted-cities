@@ -6,6 +6,7 @@ import InputField from '../styles/InputField';
 
 // Styles
 const Form = styled.form`
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -16,9 +17,33 @@ const Form = styled.form`
   font-family: 'Roboto', 'Arial', serif;
 `;
 
-const UserInput = ({ onTextChange, country, handleSubmit, clearSearchBox, placeholderText }) => {
+const ErrorPopup = styled.div`
+  display: ${props => props.displayErr || 'none'};
+  width: 100%;
+  font-family: 'Roboto', 'Arial', serif;
+  margin: 0 0 -8px;
+  padding: 0;
+  font-size: 12px;
+  color: red;
+
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media (min-width: 568px) {
+    padding-left: 20px;
+  }
+  @media (min-width: 490px) and (max-width: 567px) {
+    padding-left: 5px;
+  }
+`;
+
+const UserInput = ({ onTextChange, country, handleSubmit, clearSearchBox, 
+  placeholderText, displayErr, displayErrMsg }) => {
   return (
     <Form onSubmit={handleSubmit} autocomplete='on'>
+      <ErrorPopup displayErr={displayErrMsg}>
+        Please enter a valid country from the list!
+      </ErrorPopup>
       <InputField
         placeholder={placeholderText}
         list='countries'

@@ -21,7 +21,7 @@ const TableHeadingRow = () => {
         align='left' 
         paddingL='30px' 
       />
-      <TableHeaderElement text='Pollution Index *' fontSm='16px' />
+      <TableHeaderElement text='Pollution Index' fontSm='16px' />
     </HeadingRow>
   );
 }

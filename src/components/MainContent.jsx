@@ -57,7 +57,8 @@ class MainContent extends Component {
       ranking: 'empty',
       placeholderText: 'Select Country',
       isError: false,
-      isLoading: false
+      isLoading: false,
+      displayErrMsg: 'none'
     }
   }
 
@@ -65,6 +66,17 @@ class MainContent extends Component {
     this.setState({
       country: event.target.value
     });
+
+    const countries = [...Object.keys(countryList)];
+    const countryLC = event.target.value.toLowerCase();
+
+    if (this.state.displayErrMsg === 'block') {
+      if (countries.includes(countryLC)) {
+        this.setState({
+          displayErrMsg: 'none'
+        });
+      }  
+    }
   }
 
   clearSearchBox = () => {
@@ -177,18 +189,21 @@ class MainContent extends Component {
       })
       return countryList[countryLC];
     } else {
-      console.log('add in a div to indicate form error!');
+      this.setState({
+        displayErrMsg: 'block'
+      })
       return false;
     }
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.setState({
+      isError: false,
+      displayErrMsg: 'none'
+    })
     const QUERY_COUNTRY = this.isCountryValid(this.state.country);
     const QUERY_DATE = this.getQueryDate();
-    this.setState({
-      isError: false
-    })
 
     if (QUERY_COUNTRY !== false) {
       this.setState({
@@ -207,7 +222,6 @@ class MainContent extends Component {
         this.setState({
           ranking: this.calcPollutionIndex(citiesList).slice(0, 10),
           isLoading: false,
-          country: '',
           placeholderText: this.state.searchedCountry
         });
       })
@@ -263,7 +277,7 @@ class MainContent extends Component {
               entry.city === city
               ?
               {...entry, 
-                description: page[pageID].extract, 
+                description: page[pageID].extract.length > 0 ? page[pageID].extract : 'none', 
                 isExpanded: true,
                 isDescriptionLoading: false
               }
@@ -302,9 +316,6 @@ class MainContent extends Component {
         })
       }));
     }
-
-    // setState for description (don't forget to clear every time you press 'find cities')
-    // isLoading true and than false
   }
 
   render() {
