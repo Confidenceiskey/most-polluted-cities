@@ -36,7 +36,7 @@ const Grass = () => {
       <Footer>
         Icons by {` `} 
           <Link 
-            href='www.flaticon.com' 
+            href='https://www.flaticon.com' 
             target='_blank'
           >
             Flaticon.
