@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Loader from 'react-loader-spinner';
 import moment from 'moment';
 import styled from 'styled-components';
 import ContentBox from './ContentBox';
@@ -20,7 +21,7 @@ const Main = styled.main`
   overflow-y: scroll;
 `;
 
-// API Request Values
+// OPEN AIR QUALITY API CONSTANTS
 const PATH_BASE = 'https://api.openaq.org/v1/measurements';
 const PARAM_COUNTRY = 'country=';
 const PARAM_POLLUTANT = 'parameter[]=';
@@ -32,6 +33,20 @@ const PARAM_ORDER_BY = 'order_by=';
 const TYPE = 'city';
 const PARAM_LIMIT = 'limit=';
 const SET_HPS = '10000';
+
+// WIKI API CONSTANTS
+const WIKI_PATH_BASE = 'https://en.wikipedia.org/w/api.php';
+const PARAM_ACTION = 'action=';
+const QUERY = 'query';
+const PARAM_PROP = 'prop=';
+const EXTRACTS = 'extracts';
+const PARAM_EXINTRO = 'exintro=';
+const BOOL = 'true';
+const PARAM_TITLE = 'titles=';
+const FORMAT = 'format=';
+const FORMAT_TYPE = 'json';
+const PARAM_ORIGIN = 'origin=';
+const ORIGIN = '*';
 
 class MainContent extends Component {
   constructor(props) {
@@ -59,6 +74,7 @@ class MainContent extends Component {
     });
   }
 
+  /*** OPEN AIR QUALITY API CALL, FUNCTIONS, & CALCULATIONS ***/
   sortDescending = (citiesObj) => {
     return [...citiesObj].sort((a, b) => {
       return b.pollutionIndex - a.pollutionIndex;
@@ -111,7 +127,11 @@ class MainContent extends Component {
     .map(value => {
       return {
         city: value.city,
-        pollutionIndex: value.pollutionIndex
+        pollutionIndex: value.pollutionIndex,
+        description: '',
+        isExpanded: false,
+        isDescriptionError: false,
+        isDescriptionLoading: false
       }
     });
     return this.sortDescending(citiesWithPI);
@@ -197,8 +217,94 @@ class MainContent extends Component {
           isLoading: false
         })
       });
+    } 
+  }
+
+
+  /*** WIKI API CALL, FUNCTIONS & CALCULATIONS ***/
+
+  showCityDescription = (event, city, pos) => {
+    event.preventDefault();
+    this.setState( prevState => ({
+        ranking: prevState.ranking.map((entry) => {
+          return (
+            entry.city === city
+            ?
+            {...entry, isDescriptionError: false}
+            :
+            entry
+          );
+        })
+      }));
+
+    if (this.state.ranking[pos].description === '') {
+      this.setState( prevState => ({
+        ranking: prevState.ranking.map((entry) => {
+          return (
+            entry.city === city
+            ?
+            {...entry, isDescriptionLoading: true}
+            :
+            entry
+          );
+        })
+      }));
+      axios(`${WIKI_PATH_BASE}?${PARAM_ACTION}${QUERY}&`
+        + `${PARAM_PROP}${EXTRACTS}&${PARAM_EXINTRO}${BOOL}&`
+        + `${PARAM_TITLE}${city}&${FORMAT}${FORMAT_TYPE}&`
+        + `${PARAM_ORIGIN}${ORIGIN}`) 
+      .then(response => {
+        const page = response.data.query.pages;
+        const pageID = Object.keys(page)[0];
+
+        this.setState( prevState => ({
+          ranking: prevState.ranking.map((entry) => {
+            return (
+              entry.city === city
+              ?
+              {...entry, 
+                description: page[pageID].extract, 
+                isExpanded: true,
+                isDescriptionLoading: false
+              }
+              :
+              entry
+            );
+          })
+        }));
+      })
+      .catch(err => {
+        this.setState( prevState => ({
+          ranking: prevState.ranking.map((entry) => {
+            return (
+              entry.city === city
+              ?
+              {...entry, 
+                isDescriptionLoading: false,
+                isDescriptionError: true
+              }
+              :
+              entry
+            );
+          })
+        }));
+      });
     } else {
+      this.setState( prevState => ({
+        ranking: prevState.ranking.map((entry) => {
+          return (
+            entry.city === city 
+            ? 
+            {...entry, isExpanded: !this.state.ranking[pos].isExpanded}
+            :
+            entry
+          );
+        })
+      }));
     }
+
+    // setState for description (don't forget to clear every time you press 'find cities')
+    // isLoading true and than false
   }
 
   render() {
@@ -213,17 +319,29 @@ class MainContent extends Component {
           {...this.state} 
         />
         { !isError || ranking !== 'empty' || isLoading
-          ? 
-          isLoading ? <p>...Loading</p> : <Table {...this.state} />
-          : 
-            isError 
             ? 
-            <ErrorHeader 
-              text="Oops, your request couldn't be processed! 
-              Please try again later." 
-            />
+            isLoading 
+              ? 
+              <Loader 
+                type='MutatingDots' 
+                color='#fff' 
+                height='100px'
+                width='100px' 
+              />
+              : 
+              <Table 
+                showCityDescription={this.showCityDescription} 
+                {...this.state} 
+              />
             : 
-            null
+            isError 
+              ? 
+              <ErrorHeader 
+                text="Oops, your request couldn't be processed! 
+                Please try again later." 
+              />
+              : 
+              null
         }
       </Main>
     );

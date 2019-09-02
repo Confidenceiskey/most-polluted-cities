@@ -11,7 +11,8 @@ const BodyRow = styled.div`
   border-radius: 12px;
 `;
 
-const TableRow = ({ textLeft, textCenter, textRight, rangeZone }) => {
+const TableRow = ({ textLeft, textCenter, showCityDescription, 
+  isExpanded, textRight, rangeZone }) => {
   return (
     <BodyRow>
       <TableElement text={textLeft} />
@@ -19,7 +20,10 @@ const TableRow = ({ textLeft, textCenter, textRight, rangeZone }) => {
         text={textCenter} 
         flex={3} 
         align='left' 
-        paddingL='30px' 
+        paddingL='30px'
+        onClick={showCityDescription}
+        isExpanded={isExpanded}
+        cursor='pointer' 
       />
       <TableElement text={textRight} rangeZone={rangeZone} />
     </BodyRow>

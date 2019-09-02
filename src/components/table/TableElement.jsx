@@ -11,6 +11,7 @@ const Element = styled.div`
   flex: ${props => props.flex || 2};
   text-align: ${props => props.align || 'center'};
   padding-left: ${props => props.paddingL || '0'};
+  cursor: ${props => props.cursor || 'default'};
 
   @media (max-width: 550px) {
     font-size: 17px;
@@ -32,12 +33,16 @@ const CaptionText = styled.span`
   }
 `;
 
-const TableElement = ({ text, flex, align, paddingL, rangeZone }) => {
+const TableElement = ({ text, flex, align, paddingL, cursor, 
+  rangeZone, onClick, isExpanded }) => {
   return (
     <Element 
       flex={flex} 
       align={align} 
       paddingL={paddingL}
+      onClick={onClick}
+      isExpanded={isExpanded}
+      cursor={cursor}
     >
       {text} 
       <CaptionText>{` `}{rangeZone}</CaptionText>
