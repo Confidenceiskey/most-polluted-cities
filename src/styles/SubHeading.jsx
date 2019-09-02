@@ -13,28 +13,20 @@ const Heading = styled.h2`
   @media (min-width: 1901px) {
     font-size: 44px;
   }
-
   @media (min-width: 800px) and (max-width: 1900px) {
     font-size: 28px;
   }
-
   @media (min-width: 490px) and (max-width: 567px) {
     margin: 12px 15px 6px;
     font-size: 18px;
   }
-
-  @media (min-width: 360px) and (max-width: 489px) {
+  @media (min-width: 377px) and (max-width: 489px) {
     margin: 10px 12px 5px;
     font-size: 16px;
   }
-
-  @media (max-width: 359px) {
+  @media (max-width: 376px) {
     margin: 10px 12px 5px;
     font-size: 14px;
-  }
-
-  @media screen and (orientation: landscape) and (max-height: 450px) {
-    font-size: 2.7vw;
   }
 `;
 

@@ -13,6 +13,14 @@ const Header = styled.h1`
   @media (min-width: 991px) and (max-height: 500px) {
     font-size: 40px;
   }
+
+  @media (min-width: 568px) and (max-width: 990px) and (max-height: 500px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 567px) and (max-height: 500px) {
+    font-size: 24px;
+  }
 `;
 
 const Title = ({ text }) => {

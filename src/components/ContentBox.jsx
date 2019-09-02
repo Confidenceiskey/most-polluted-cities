@@ -8,24 +8,24 @@ const Box = styled.div`
   display: flex;
   margin: 20px 0;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
   background: #fff;
   border-radius: 30px;
 
   @media (min-width: 1600px) {
-    height: 320px;
+    min-height: 320px;
   }
   @media (min-width: 769px) and (max-width: 991px) {
-    height: 220px;
+    min-height: 220px;
   }
   @media (min-width: 568px) and (max-width: 768px) {
-    height: 180px;
+    min-height: 180px;
   }
   @media  (max-width: 567px) {
-    height: 180px;
+    min-height: 180px;
   }
   @media screen and (max-height: 650px) and (orientation: portrait) {
-    height: 160px;
+    min-height: 160px;
   }
 `;
 

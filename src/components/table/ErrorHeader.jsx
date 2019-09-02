@@ -7,7 +7,7 @@ const HeadingRow = styled.div`
   width: calc(100% - 50px);
   align-items: center;
   background: #fff;
-  margin: 10px 0;
+  margin: 10px auto;
   padding: 5px 10px;
   border-radius: 10px;
 `;

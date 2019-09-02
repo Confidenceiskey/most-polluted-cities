@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ErrorPopdown = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%
+  width: 78%
   align-items: center;
   background: #e6e6e6;
   margin: -10px auto 0;
