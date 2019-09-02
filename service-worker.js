@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/most-polluted-cities/precache-manifest.5b530775b999d2fc971fe7f4df472006.js"
+  "/most-polluted-cities/precache-manifest.abbcc440a3a6e31c31ba7405ecce95cc.js"
 );
 
 self.addEventListener('message', (event) => {
