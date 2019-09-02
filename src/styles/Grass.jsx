@@ -43,7 +43,7 @@ const Grass = () => {
           </Link>
           {` `} See {` `}
           <Link 
-            href='https://github.com/Confidenceiskey/most-polluted-cities#most-polluted-cities' 
+            href='https://github.com/Confidenceiskey/most-polluted-cities#icons-by' 
             target='_blank'
           >
             Authors.
