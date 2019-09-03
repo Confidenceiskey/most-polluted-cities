@@ -7,7 +7,7 @@ const DescriptionPopdown = styled.div`
   width: 78%
   align-items: center;
   background: #e6e6e6;
-  margin: -10px auto 0;
+  margin: -10px auto 10px;
   padding: 15px 15px;
   border-radius: 0;
 `;

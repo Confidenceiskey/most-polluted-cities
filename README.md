@@ -17,37 +17,44 @@ To complete the project, the below **user stories** needed to be fulfilled:
 
 I decided to build this project by first doing some rough pencil designs to get an idea of the overall layout. I choose to use React for this project and started by building out the various UI components. This also involved making sure the project was fully responsive and looked good on all screen sizes.
 
-Once this was completed, I started coding and decided to first get the air quality data from the OpenAQ API. I worked with the data, as well as did some research on air quality calculations. I decided to settle on the Air Health Quality Index calculation that is used in Canada. I slightly modified the formula to include all measurements for a city (as opposed to each measurement point) and took the average over the three hours irregardless of the minimum or maximum amount of data points. 
+Once this was completed, I started coding and decided to first get the air quality data from the OpenAQ API. Once I knew the data that I was going to get, I did some research on air quality calculations in order to determine a pollution ranking. I decided to settle on the Air Health Quality Index calculation that is used in Canada. I slightly modified the formula to include all measurements for a city (as opposed to each measurement point) and took the average over the last 3 hours, irregardless of the minimum or maximum amount of data points. If no data measurements were taken for a particular country over the past 3 hours, no pollution ranking would be determined.
 
-After this, I implemented this into the UI and then got to work on obtaining the city descriptions from the WIKI API. 
+After completing the OpenAQ API call and manipulating the data, I implemented this into the UI. Then I got to work on obtaining the city descriptions from the WIKI API and displaying this information in the app. 
 
-The last little bit was doing finishing touches on the project, as well as error checking.
+The last little bit was doing finishing touches on the project and error checking.
 
 #### Made with
 - HTML, CSS, JavaScript & React 
+- OpenAQ API
+- WIKI API
+- Pollution index calculation based off of the [Air Health Quality](https://en.wikipedia.org/wiki/Air_Quality_Health_Index_(Canada)) Index used in Canada.
 
 
-#### Icons by
+#### Icons by [Flaticon](www.flaticon.com)
 
-<strong>Industrial pollution:</strong> 
+**Industrial pollution:**
+- Made by [monkik](https://www.flaticon.com/authors/monkik)
 
-<div>Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+**City landscape:**
+- Made by [smalllikeart](https://www.flaticon.com/authors/smalllikeart)
 
-<strong>City landscape:</strong>
+**Cow:**
+- Made by [Flat Icons](https://www.flaticon.com/authors/flat-icons)
 
-<div>Icons made by <a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+**Masked Man:**
+- Made by [surang](https://www.flaticon.com/authors/surang)
 
-<strong>Cow:</strong>
+**Person with Mask (face only):**
+- Made by [ultimatearm](https://www.flaticon.com/authors/ultimatearm)
 
-<div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
-<strong>Masked Man:</strong>
+#### Preview
 
-<div>Icons made by <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+Check out the [live version](https://confidenceiskey.github.io/most-polluted-cities/)
 
-<strong>Person with Mask (face only):</strong>
+![Screenshot of my most polluted cities project built in React](https://confidenceiskey.github.io/codepenimg/most-polluted.jpeg "Screenshot of my most polluted cities React App")
 
-<div>Icons made by <a href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">ultimatearm</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+##
 
 
 #### Disclaimer
