@@ -30,7 +30,7 @@ The last little bit was doing finishing touches on the project and error checkin
 - Pollution index calculation based off of the [Air Health Quality](https://en.wikipedia.org/wiki/Air_Quality_Health_Index_(Canada)) Index used in Canada.
 
 
-#### Icons by [Flaticon](www.flaticon.com)
+#### Icons by [Flaticon](https://www.flaticon.com)
 
 **Industrial pollution:**
 - Made by [monkik](https://www.flaticon.com/authors/monkik)
