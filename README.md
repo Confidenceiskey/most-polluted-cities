@@ -32,20 +32,15 @@ The last little bit was doing finishing touches on the project and error checkin
 
 #### Icons by [Flaticon](https://www.flaticon.com)
 
-**Industrial pollution:**
-- Made by [monkik](https://www.flaticon.com/authors/monkik)
+- **Industrial pollution:** Made by [monkik](https://www.flaticon.com/authors/monkik)
 
-**City landscape:**
-- Made by [smalllikeart](https://www.flaticon.com/authors/smalllikeart)
+- **City landscape:** Made by [smalllikeart](https://www.flaticon.com/authors/smalllikeart)
 
-**Cow:**
-- Made by [Flat Icons](https://www.flaticon.com/authors/flat-icons)
+- **Cow:** Made by [Flat Icons](https://www.flaticon.com/authors/flat-icons)
 
-**Masked Man:**
-- Made by [surang](https://www.flaticon.com/authors/surang)
+- **Masked Man:** Made by [surang](https://www.flaticon.com/authors/surang)
 
-**Person with Mask (face only):**
-- Made by [ultimatearm](https://www.flaticon.com/authors/ultimatearm)
+- **Person with Mask (face only):** Made by [ultimatearm](https://www.flaticon.com/authors/ultimatearm)
 
 
 #### Preview
