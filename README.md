@@ -1,4 +1,4 @@
-### [Most Polluted Cities](https://confidenceiskey.github.io/most-polluted-cities/)
+### [Most Polluted Cities](https://davidpnowak.com/p/most-polluted-cities/)
 
 _A web app that finds the 10 most polluted cities based on a selected country_
 
@@ -45,7 +45,7 @@ The last little bit was doing finishing touches on the project and error checkin
 
 #### Preview
 
-Check out the [live version](https://confidenceiskey.github.io/most-polluted-cities/)
+Check out my live [most polluted cities](https://davidpnowak.com/p/most-polluted-cities/) app.
 
 ![Screenshot of my most polluted cities project built in React](https://confidenceiskey.github.io/codepenimg/most-polluted.jpeg "Screenshot of my most polluted cities React App")
 
