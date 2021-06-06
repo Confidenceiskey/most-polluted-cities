@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eaae56aaa67a448263e186b8688b6403",
+    "revision": "50fa5f18d4e6bd5c7cf993a464e7944a",
     "url": "/most-polluted-cities/index.html"
   },
   {
-    "revision": "971b8f26458f8da99d6a",
-    "url": "/most-polluted-cities/static/js/2.35f925b4.chunk.js"
+    "revision": "089a2ad5cb5e5774d608",
+    "url": "/most-polluted-cities/static/js/2.c679d25a.chunk.js"
   },
   {
-    "revision": "b83b81ec8a3a8827b64e",
-    "url": "/most-polluted-cities/static/js/main.77f84c13.chunk.js"
+    "revision": "d2fd8c196c911c1b9014",
+    "url": "/most-polluted-cities/static/js/main.98a47009.chunk.js"
   },
   {
     "revision": "b2e285ccdab6db1d2cd1",
